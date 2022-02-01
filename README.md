@@ -15,21 +15,22 @@
         - openjdk17
       - [packコマンド](https://github.com/buildpacks/pack/releases)
 
-## build
+## つかいかた
+
+### コンテナイメージの作り方イメージ
+
+- [Makefile](Makefile)にコンテナイメージをビルドする処理を記載している
+  - 環境依存値は`.env`からロードする
+  - [.env.sample](./.env.sample)は定義する環境依存値のサンプル
 
 ### 必要なツール
 
-- make
-- docker
+- makeコマンド
 - [buildx](https://matsuand.github.io/docs.docker.jp.onthefly/buildx/working-with-buildx/)
 
-### つかいかた
+### Usage
 
-- [Makefile](Makefile)にbuildにひつような処理を記載している
-- 環境依存値は`.env`からロードする
-- [.env.sample](./.env.sample)は定義する環境依存値のサンプル
-
-#### はじめに
+#### まず最初に
 
 ```sh
 # 環境依存値を記載する
@@ -37,7 +38,7 @@ cp .env.sample .env
 vi .env
 ```
 
-#### コンテナイメージのbuild/push
+#### コンテナイメージのビルド/プッシュ
 
 ```sh
 make
